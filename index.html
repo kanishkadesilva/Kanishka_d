@@ -3,449 +3,353 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Personal portfolio of Kanishka De Silva">
-  <title>Kanishka De Silva | Personal Portfolio</title>
+
+  <!-- ================= EDIT HERE: WEBSITE TITLE ================= -->
+  <title>Kanishka De Silva | GitHub Profile</title>
+
   <style>
+    /* ================= EASY EDIT: MAIN COLORS ================= */
     :root {
-      --bg: #0a0a0f;
-      --card: #12121a;
-      --text: #f5f5f7;
-      --muted: #a7a7b3;
-      --accent: #6c63ff;
-      --accent2: #00d4ff;
-      --border: rgba(255,255,255,.1);
+      --background: #050505;
+      --text: #ffffff;
+      --red: #ff0000;
+      --card: #111111;
+      --gray: #aaaaaa;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     body {
-      font-family: Arial, Helvetica, sans-serif;
-      background:
-        radial-gradient(circle at 85% 15%, rgba(108,99,255,.18), transparent 28%),
-        radial-gradient(circle at 15% 80%, rgba(0,212,255,.10), transparent 25%),
-        var(--bg);
+      font-family: Arial, sans-serif;
+      background: var(--background);
       color: var(--text);
+      text-align: center;
       line-height: 1.6;
     }
 
-    a { color: inherit; text-decoration: none; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
     .container {
-      width: min(1100px, 92%);
+      width: min(1000px, 92%);
       margin: auto;
     }
 
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      backdrop-filter: blur(14px);
-      background: rgba(10,10,15,.78);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .nav-inner {
-      min-height: 70px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .logo {
-      font-size: 1.2rem;
-      font-weight: 800;
-      letter-spacing: .5px;
-    }
-
-    .logo span { color: var(--accent2); }
-
-    .nav-links {
-      display: flex;
-      gap: 22px;
-      list-style: none;
-      color: var(--muted);
-      font-size: .95rem;
-    }
-
-    .nav-links a:hover { color: white; }
+    /* ================= HERO ================= */
 
     .hero {
-      min-height: 88vh;
-      display: grid;
-      place-items: center;
-      padding: 70px 0;
+      padding: 45px 0 25px;
     }
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.25fr .75fr;
-      align-items: center;
-      gap: 60px;
+    .hello-gif {
+      width: 100px;
+      margin-bottom: 15px;
     }
 
-    .badge {
-      display: inline-block;
-      padding: 8px 14px;
-      border: 1px solid rgba(0,212,255,.35);
-      border-radius: 999px;
-      color: #bdf5ff;
-      background: rgba(0,212,255,.06);
-      font-size: .85rem;
-      margin-bottom: 18px;
+    .typing {
+      max-width: 100%;
+      height: auto;
     }
 
-    h1 {
-      font-size: clamp(2.8rem, 7vw, 5.5rem);
-      line-height: .98;
-      letter-spacing: -3px;
-      margin-bottom: 22px;
-    }
+    /* ================= PROFILE PHOTO ================= */
 
-    h1 span {
-      background: linear-gradient(90deg, var(--accent), var(--accent2));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    .hero p {
-      max-width: 650px;
-      color: var(--muted);
-      font-size: 1.08rem;
-      margin-bottom: 30px;
-    }
-
-    .buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .btn {
-      padding: 13px 20px;
-      border-radius: 12px;
-      border: 1px solid var(--border);
-      transition: .25s;
-      font-weight: 700;
-    }
-
-    .btn-primary {
-      background: linear-gradient(90deg, var(--accent), #4d8dff);
-      border: none;
-    }
-
-    .btn-secondary { background: rgba(255,255,255,.04); }
-
-    .btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 30px rgba(0,0,0,.3);
-    }
-
-    .profile-card {
-      position: relative;
-      padding: 34px;
-      border-radius: 28px;
-      background: linear-gradient(145deg, rgba(255,255,255,.08), rgba(255,255,255,.025));
-      border: 1px solid var(--border);
-      box-shadow: 0 30px 80px rgba(0,0,0,.35);
-      text-align: center;
-    }
-
-    .avatar {
-      width: 190px;
-      height: 190px;
-      margin: 0 auto 22px;
+    .profile-photo {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
       border-radius: 50%;
-      display: grid;
-      place-items: center;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      padding: 4px;
+      border: 4px solid var(--red);
+      margin: 25px auto;
+      box-shadow: 0 0 30px rgba(255, 0, 0, .35);
     }
 
-    .avatar-inner {
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      background: #15151e;
-      display: grid;
-      place-items: center;
-      font-size: 3rem;
-      font-weight: 800;
+    /* ================= NAME ================= */
+
+    .name {
+      font-size: clamp(2rem, 6vw, 3.2rem);
+      color: var(--red);
+      margin: 10px 0;
     }
 
-    .profile-card h2 { margin-bottom: 6px; }
-    .profile-card p { color: var(--muted); }
-
-    section { padding: 95px 0; }
-
-    .section-title {
-      font-size: 2.2rem;
-      margin-bottom: 12px;
-    }
-
-    .section-subtitle {
-      color: var(--muted);
-      margin-bottom: 35px;
-    }
-
-    .about-grid,
-    .skills-grid,
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
-
-    .card {
-      padding: 28px;
-      border-radius: 20px;
-      background: var(--card);
-      border: 1px solid var(--border);
-    }
-
-    .card h3 { margin-bottom: 12px; }
-    .card p, .card li { color: var(--muted); }
-
-    .education-item {
-      border-left: 3px solid var(--accent);
-      padding-left: 20px;
+    .tagline {
+      color: var(--gray);
+      font-size: 1rem;
       margin-bottom: 25px;
     }
 
-    .education-item:last-child { margin-bottom: 0; }
+    /* ================= QUOTE / BADGE ================= */
 
-    .education-item h3 { margin-bottom: 5px; }
+    .quote {
+      display: inline-block;
+      padding: 12px 18px;
+      border: 1px solid var(--red);
+      border-radius: 12px;
+      background: rgba(255, 0, 0, .06);
+      margin: 15px 0 35px;
+      color: #ffffff;
+    }
 
-    .skill-list {
+    /* ================= SOCIAL LINKS ================= */
+
+    .socials {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 40px;
+    }
+
+    .socials a {
+      padding: 10px 18px;
+      border: 1px solid #333;
+      border-radius: 10px;
+      background: var(--card);
+      transition: .2s;
+    }
+
+    .socials a:hover {
+      border-color: var(--red);
+      color: var(--red);
+      transform: translateY(-2px);
+    }
+
+    /* ================= INFORMATION CARDS ================= */
+
+    .section {
+      padding: 35px 0;
+    }
+
+    .section-title {
+      color: var(--red);
+      font-size: 1.8rem;
+      margin-bottom: 18px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      text-align: left;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid #222;
+      border-radius: 16px;
+      padding: 22px;
+    }
+
+    .card h3 {
+      color: var(--red);
+      margin-bottom: 10px;
+    }
+
+    .card p,
+    .card li {
+      color: var(--gray);
+    }
+
+    .skills {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
     }
 
     .skill {
-      padding: 9px 13px;
+      padding: 7px 12px;
+      border: 1px solid #333;
       border-radius: 999px;
-      background: rgba(108,99,255,.1);
-      border: 1px solid rgba(108,99,255,.25);
-      color: #dcd9ff;
-      font-size: .9rem;
-    }
-
-    .contact-card {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-    }
-
-    .icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 12px;
-      display: grid;
-      place-items: center;
-      background: rgba(0,212,255,.08);
-      border: 1px solid rgba(0,212,255,.18);
-      font-size: 1.2rem;
+      background: #0b0b0b;
+      color: white;
     }
 
     footer {
-      padding: 30px 0;
-      border-top: 1px solid var(--border);
-      color: var(--muted);
-      text-align: center;
+      margin-top: 45px;
+      padding: 25px;
+      border-top: 1px solid #222;
+      color: var(--gray);
     }
 
-    @media (max-width: 800px) {
-      .hero-grid,
-      .about-grid,
-      .skills-grid,
-      .contact-grid {
+    /* ================= MOBILE ================= */
+
+    @media (max-width: 700px) {
+      .cards {
         grid-template-columns: 1fr;
       }
 
-      .hero { min-height: auto; padding-top: 60px; }
-      .nav-links { display: none; }
-      h1 { letter-spacing: -2px; }
-      .profile-card { max-width: 420px; margin: auto; }
+      .profile-photo {
+        width: 150px;
+        height: 150px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <nav>
-    <div class="container nav-inner">
-      <a class="logo" href="#home">Kanishka<span>.</span></a>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
+  <div class="container">
 
-  <main>
+    <!-- =========================================================
+         EASY EDIT AREA 01: INTRO
+         Change the image URL, name and tagline below.
+         ========================================================= -->
 
-    <section class="hero" id="home">
-      <div class="container hero-grid">
-        <div>
-          <div class="badge">PERSONAL PORTFOLIO</div>
-          <h1>Hello, I'm <span>Kanishka</span>.</h1>
+    <section class="hero">
+
+      <!-- Hello GIF -->
+      <img
+        class="hello-gif"
+        src="https://user-images.githubusercontent.com/74038190/216649417-9acc58df-9186-4132-ad43-819a57babb67.gif"
+        alt="Hello animation"
+      >
+
+      <!-- Typing text -->
+      <br>
+      <img
+        class="typing"
+        src="https://readme-typing-svg.demolab.com?font=Lemon&size=33&pause=1000&color=FF0000&random=false&width=435&lines=Hello+World!;Welcome+to+my+profile."
+        alt="Typing text"
+      >
+
+      <!-- =======================================================
+           CHANGE YOUR PHOTO URL HERE
+           ======================================================= -->
+      <br>
+      <img
+        class="profile-photo"
+        src="https://i.ibb.co/RYkT3D3/1000046040-01.jpg"
+        alt="Kanishka De Silva"
+      >
+
+      <!-- Change your name here -->
+      <h1 class="name">KANISHKA DE SILVA</h1>
+
+      <!-- Change your tagline here -->
+      <p class="tagline">
+        Inspiring the intelligence. Connecting you digitally. 🐝
+      </p>
+
+      <!-- Change your quote here -->
+      <div class="quote">
+        You only live once, but if you do it right, once is enough.
+      </div>
+
+      <!-- =========================================================
+           EASY EDIT AREA 02: SOCIAL LINKS
+           Change href and text only.
+           ========================================================= -->
+      <div class="socials">
+
+        <a href="https://github.com/kanishkadesilva" target="_blank">
+          GitHub
+        </a>
+
+        <a href="https://www.linkedin.com/" target="_blank">
+          LinkedIn
+        </a>
+
+        <a href="https://www.facebook.com/" target="_blank">
+          Facebook
+        </a>
+
+        <a href="https://www.instagram.com/" target="_blank">
+          Instagram
+        </a>
+
+      </div>
+    </section>
+
+
+    <!-- =========================================================
+         EASY EDIT AREA 03: ABOUT
+         ========================================================= -->
+
+    <section class="section">
+      <h2 class="section-title">About Me</h2>
+
+      <div class="cards">
+
+        <div class="card">
+          <h3>👋 About Me</h3>
           <p>
-            A responsible, hardworking and motivated individual who enjoys learning
-            new skills, communicating with people and building a better future
-            through continuous growth.
+            I am Kanishka De Silva, a responsible and motivated individual
+            who enjoys learning new things, improving my skills and exploring
+            technology.
           </p>
-
-          <div class="buttons">
-            <a class="btn btn-primary" href="#about">Explore My Profile</a>
-            <a class="btn btn-secondary" href="#contact">Get In Touch</a>
-          </div>
         </div>
-
-        <div class="profile-card">
-          <!-- Replace the initials with your own photo if you want -->
-          <div class="avatar">
-            <div class="avatar-inner">KD</div>
-          </div>
-          <h2>Kanishka De Silva</h2>
-          <p>Student • Learner • Future Professional</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="about">
-      <div class="container">
-        <h2 class="section-title">About Me</h2>
-        <p class="section-subtitle">A short introduction about who I am.</p>
-
-        <div class="about-grid">
-          <div class="card">
-            <h3>My Profile</h3>
-            <p>
-              I am a responsible and honest person with good communication skills.
-              I am always willing to learn, improve my abilities and gain valuable
-              work experience. I believe that every new opportunity is a chance
-              to grow.
-            </p>
-          </div>
-
-          <div class="card">
-            <h3>My Goal</h3>
-            <p>
-              My goal is to develop my knowledge, practical skills and professional
-              experience while contributing positively to the people and
-              organizations I work with.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="education">
-      <div class="container">
-        <h2 class="section-title">Education</h2>
-        <p class="section-subtitle">My academic background.</p>
 
         <div class="card">
-          <div class="education-item">
-            <h3>G.C.E. Advanced Level — Commerce Stream</h3>
-            <p>Commerce Stream • Results: S3</p>
-          </div>
+          <h3>🎯 My Goal</h3>
+          <p>
+            My goal is to develop my knowledge, practical skills and
+            experience while creating useful digital projects.
+          </p>
+        </div>
 
-          <div class="education-item">
-            <h3>G.C.E. Ordinary Level</h3>
-            <p>
-              Mathematics — A &nbsp; | &nbsp; Commerce — B &nbsp; | &nbsp;
-              English — B &nbsp; | &nbsp; ICT — C
-            </p>
-            <p>
-              Sinhala — C &nbsp; | &nbsp; Science — C &nbsp; | &nbsp;
-              History — C &nbsp; | &nbsp; Buddhism — S &nbsp; | &nbsp; Art — S
-            </p>
-          </div>
+      </div>
+    </section>
 
-          <div class="education-item">
-            <h3>English Diploma</h3>
-            <p>Completed Successfully</p>
-          </div>
+
+    <!-- =========================================================
+         EASY EDIT AREA 04: SKILLS
+         Add or remove <span class="skill">...</span>
+         ========================================================= -->
+
+    <section class="section">
+      <h2 class="section-title">My Skills</h2>
+
+      <div class="card">
+        <div class="skills">
+
+          <span class="skill">HTML</span>
+          <span class="skill">CSS</span>
+          <span class="skill">GitHub</span>
+          <span class="skill">MS Word</span>
+          <span class="skill">MS Excel</span>
+          <span class="skill">Communication</span>
+          <span class="skill">Teamwork</span>
+          <span class="skill">Fast Learner</span>
+
         </div>
       </div>
     </section>
 
-    <section id="skills">
-      <div class="container">
-        <h2 class="section-title">Skills</h2>
-        <p class="section-subtitle">Skills I have developed and continue to improve.</p>
+
+    <!-- =========================================================
+         EASY EDIT AREA 05: CONTACT
+         ========================================================= -->
+
+    <section class="section">
+      <h2 class="section-title">Contact Me</h2>
+
+      <div class="cards">
 
         <div class="card">
-          <div class="skill-list">
-            <span class="skill">Sinhala — Native</span>
-            <span class="skill">English — Good Communication</span>
-            <span class="skill">Microsoft Word</span>
-            <span class="skill">Microsoft Excel</span>
-            <span class="skill">Email Handling</span>
-            <span class="skill">Teamwork</span>
-            <span class="skill">Communication</span>
-            <span class="skill">Time Management</span>
-            <span class="skill">Willingness to Learn</span>
-          </div>
+          <h3>📧 Email</h3>
+          <p>kanishkadesilva988@gmail.com</p>
         </div>
+
+        <div class="card">
+          <h3>💻 GitHub</h3>
+          <p>github.com/kanishkadesilva</p>
+        </div>
+
       </div>
     </section>
 
-    <section id="contact">
-      <div class="container">
-        <h2 class="section-title">Let's Connect</h2>
-        <p class="section-subtitle">
-          Replace the placeholders below with your real contact details before publishing.
-        </p>
+  </div>
 
-        <div class="contact-grid">
-          <div class="card contact-card">
-            <div class="icon">✉</div>
-            <div>
-              <h3>Email</h3>
-              <p>your-email@example.com</p>
-            </div>
-          </div>
 
-          <div class="card contact-card">
-            <div class="icon">📱</div>
-            <div>
-              <h3>Phone</h3>
-              <p>+94 XX XXX XXXX</p>
-            </div>
-          </div>
-
-          <div class="card contact-card">
-            <div class="icon">GH</div>
-            <div>
-              <h3>GitHub</h3>
-              <p>github.com/yourusername</p>
-            </div>
-          </div>
-
-          <div class="card contact-card">
-            <div class="icon">in</div>
-            <div>
-              <h3>LinkedIn</h3>
-              <p>linkedin.com/in/yourusername</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </main>
+  <!-- ================= FOOTER ================= -->
 
   <footer>
-    <div class="container">
-      © 2026 Kanishka De Silva • Built for GitHub Pages
-    </div>
+    © 2026 Kanishka De Silva • Made with ❤️
   </footer>
 
 </body>
